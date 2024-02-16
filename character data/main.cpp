@@ -1,14 +1,17 @@
-//
-//  main.cpp
-//  character data
-//
-//  Created by Dmitriy Boroda on 2/16/24.
-//
-
 #include <iostream>
+#include <fstream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+const string file_name = "/Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt";
+
+int main(){
+    
+    // Проверка на наличие файла
+    ifstream in(file_name);
+    if (!in)
+    {
+        cout << "Ошибка: файл " << file_name << " не существует" << endl;
+        return 0;
+    } // if
+    
 }
