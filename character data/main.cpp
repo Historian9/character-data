@@ -65,6 +65,17 @@ int main() {
     }
     cout << endl;
 
+    // крч пока хз как 2 задание написать, пока так сделал:
+    for (int i = 0; i < min(line1.size(), line2.size()); i++){
+        cout << line1[i] << line2[i];
+    }
+    
+    if (min(line1.size(), line2.size()) == line1.size()){
+        cout << line2.substr(line1.size());
+    } else if (min(line1.size(), line2.size()) == line2.size()){
+        cout << line1.substr(line2.size());
+    }
+    
     return 0;
 }
 
