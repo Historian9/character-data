@@ -1,17 +1,28 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
-const string file_name = "/Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt";
+const string fileName = "/Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt";
 
-int main(){
+int main() {
+    ifstream inputFile(fileName);
+
+    if (!inputFile.is_open()) {
+        cout << "Файла <" << fileName << "> не существует" << endl;
+        return 1;
+    }
+
+    string line1, line2;
+    getline(inputFile, line1);
+    getline(inputFile, line2);
     
-    // Проверка на наличие файла
-    ifstream in(file_name);
-    if (!in)
-    {
-        cout << "Ошибка: файл " << file_name << " не существует" << endl;
-        return 0;
-    } // if
+    inputFile.close();
+
+    string fullLine = line1 + line2;
+
     
+    
+    return 0;
 }
+
