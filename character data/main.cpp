@@ -65,17 +65,21 @@ int main() {
     }
     cout << endl;
 
-    // крч пока хз как 2 задание написать, пока так сделал:
-    for (int i = 0; i < min(line1.size(), line2.size()); i++){
-        cout << line1[i] << line2[i];
+    cout << "Чередование символов исходной строки через два: ";
+    
+    // поочередно выводим по два символа из каждой строки
+    for (int i = 0; i < min(line1.size(), line2.size()) - 1; i += 2){
+        cout << line1[i] << line1[i + 1] << line2[i] << line2[i + 1];
     }
     
-    if (min(line1.size(), line2.size()) == line1.size()){
-        cout << line2.substr(line1.size());
-    } else if (min(line1.size(), line2.size()) == line2.size()){
-        cout << line1.substr(line2.size());
+    // если символов в строках было разное количество -> выводим оставшиеся символы
+    if ((min(line1.size(), line2.size()) == line1.size()) and (line1.size() != line2.size())){
+        cout << line2.substr(line1.size() - 1);
+    } else if ((min(line1.size(), line2.size()) == line2.size()) and (line1.size() != line2.size())){
+        cout << line1.substr(line2.size() - 1);
     }
     
+    cout << endl;
     return 0;
 }
 
