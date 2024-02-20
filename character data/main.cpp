@@ -5,7 +5,8 @@
 #include <vector> // для создания вектора
 #include <unordered_map> // для использования хеш-таблицы
 using namespace std;
-
+//мой путь /Users/Rava/Documents/character-data/character data/file.txt
+//твой путь /Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt
 const string fileName = "/Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt"; // путь к файлу
 
 
