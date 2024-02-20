@@ -11,7 +11,7 @@ const string fileName = "/Users/dmitriyboroda/Desktop/dev/laboratory work/charac
 
 // функция для подсчета повторений символов в слове
 bool hasDuplicateLetters(const string& word){
-    unordered_map<char, int> letterCount; // создания хеш-таблицы (словаря), где будут храниться буквы слова, и сколько раз они встречаются в нем
+    unordered_map<char, int> letterCount; // создания хеш-таблицы (словаря), где будут храниться буквы слова, и сколько раз они встречаются
     
     for (int i = 0; i < word.size(); i++){
         letterCount[word[i]]++;
@@ -24,7 +24,6 @@ bool hasDuplicateLetters(const string& word){
 
 
 int main() {
-    string lol = "LOOOOOOOL";
     ifstream inputFile(fileName); // для чтения данных из файла
 
     if (!inputFile.is_open()){ // проверка на наличие файла
@@ -34,15 +33,14 @@ int main() {
     
     string line1, line2;
     
-    // чтение строк из файла
-    getline(inputFile, line1);
+    getline(inputFile, line1); // чтение первой строки из файла
     
     if (line1 == ""){ // проверка на наличие элементов в файле
         cout << "Файл пустой";
         return 2;
     }
     
-    getline(inputFile, line2);
+    getline(inputFile, line2); // чтение второй строки из файла
     
     inputFile.close(); // закрытие файла
 
