@@ -24,6 +24,7 @@ bool hasDuplicateLetters(const string& word){
 
 
 int main() {
+    string lol = "LOOOOOOOL";
     ifstream inputFile(fileName); // для чтения данных из файла
 
     if (!inputFile.is_open()){ // проверка на наличие файла
