@@ -6,7 +6,7 @@ using namespace std;
 // путь 2 - /Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt
 const char* fileName = "/Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt"; // путь к файлу
 
-// функция для подсчета повторений символов в слове
+// Функция для подсчета повторений символов в слове
 bool hasDuplicateLetters(const char* word, int length) {
     int letterCount[256] = {0}; // массив для подсчета повторений символов (ASCII)
 
@@ -72,7 +72,7 @@ int main() {
         }
         i++;
         
-    } while (fullLine[i - 1] != '\0'); // используем do-while, чтобы мы сначала дошли до конца строки, проверили слово на повторение букв и вывели его (i - 1 используется для того же)
+    } while (fullLine[i - 1] != '\0'); // используем do-while, чтобы мы сначала дошли до конца строки, проверили слово на повторение букв и вывели его; i - 1 используется, чтобы не выйти за пределы цикла
     
     cout << endl;
     
