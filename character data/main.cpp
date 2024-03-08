@@ -6,6 +6,19 @@ using namespace std;
 // путь 2 - /Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt
 const char* fileName = "/Users/dmitriyboroda/Desktop/dev/laboratory work/character data/character data/file.txt"; // путь к файлу
 
+
+// Функция для проверки, содержатся ли только латинские буквы в строке
+bool containsOnlyLatinLetters(const char* str) {
+    for (int i = 0; str[i] != '\0'; ++i) {
+        // Проверяем, что символ принадлежит латинскому алфавиту (буквы в верхнем и нижнем регистре)
+        if ((str[i] != ' ' and (str[i] < 'A' or (str[i] > 'Z' and str[i] < 'a') or str[i] > 'z'))) {
+            return false; // если символ не является латинской буквой или пробелом, возвращаем false
+        }
+    }
+    return true; // все символы латинские
+}
+
+
 // Функция для подсчета повторений символов в слове
 bool hasDuplicateLetters(const char* word, int length) {
     int letterCount[256] = {0}; // массив для подсчета повторений символов (ASCII)
@@ -42,6 +55,16 @@ int main() {
     if (line2[0] == '\0') { // проверка на наличие элементов в файле (2 строка)
         cout << "2 строка пустая" << endl;
         return 3;
+    }
+    
+    if (!containsOnlyLatinLetters(line1)) { // проверка на наличие только латинских букв в 1 строке
+            cout << "В файле содержатся нелатинские символы в первой строке" << endl;
+            return 4;
+        }
+
+    if (!containsOnlyLatinLetters(line2)) { // проверка на наличие только латинских букв во 2 строке
+        cout << "В файле содержатся нелатинские символы во второй строке" << endl;
+        return 5;
     }
     
     inputFile.close(); // закрытие файла
